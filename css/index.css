@@ -269,12 +269,13 @@ html,body{
 	transition: all .5s; 
 }
 .videos{
-	width: calc(100%);
-	height: auto;
+	width: 100%;
+	height: 100%;
 	margin-top: 4.5rem;
 	background-color: pink;
 	position: absolute;
 	left: calc(0);
+	overflow-x: hidden;
 	
 }
 .video-demo{
@@ -290,3 +291,17 @@ html,body{
 	width: 100%;
 	position: relative;
 }
+.imgscroll{
+	height: auto;
+	width: 100%;
+}
+.imgset{
+	width: 100%;
+	height: auto;
+}
+.imgset img{
+	width:100%;
+}
+.swiper-pagination-bullet-active{
+	background-color: rgb(212,60,51) !important;
+} 

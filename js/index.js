@@ -1,12 +1,14 @@
 $(function (){
-	var obj = {
-				"urls":"img.json",
+			
+		var obj = {
+				"attrName":"bacimg",
 				"dom":"#scorllimg",
 				"color1":"rgb(212,60,51)",
 				"color2":"rgba(255,255,255,0.5)"
 			}
-			$.scrollImgs(obj);//图片轮播
+//			$.scrollImgs(obj);//图片轮播
 	
+	new AJAX(randers);
 	
 	
 	
@@ -15,10 +17,20 @@ $(function (){
 	var makes = true;
 	
 	clickDom();
-	moves();
+	moves();//页面滑动
+	
+	imgscrolls();
+	
+	function imgscrolls(){//图片滑动
+		var swiper = new Swiper('.imgscroll',{
+			autoplay:2500,
+			pagination : '.swiper-pagination',
+			paginationClickable :true
+		});
+	}
 	
 	function moves(){
-		var swiper = new Swiper('.swiper-container',{
+		var swiper = new Swiper('.box',{
 	    	onTransitionEnd: function(swiper){
 	        	  listbingevent();
 	    	}
@@ -63,11 +75,13 @@ $(function (){
 		var domtext = document.querySelectorAll('.songs-list li>.songs-describe');
 		var len = domli.length;
 		for(var i = 0;i<len;i++){
-			domli[i].style.backgroundImage = 'url('+data[i].url+')';
+			domli[i].setAttribute('bacimg',data[i].url);
+//			domli[i].style.backgroundImage = 'url('+data[i].url+')';
 			domtext[i].innerText = data[i].text;
 		}
 		$('.movies').css({"background-image":"url("+moves.moves.url+")"});
 		$('.mov-text').text(moves.moves.text);
+		$.layzLoadings(obj);
 	}
 	
 	function listbingevent(){
@@ -147,6 +161,18 @@ $(function (){
 ////			}
 //		})
 //	}
+	function randers(data){//轮播图渲染
+		var data = data.res;
+		var img = $('.imgset img');
+		var len = img.length;
+		console.log(data);
+		for(var i = 0;i<len;i++){
+			img[i].setAttribute('src',data[i].img);
+		}
+		
+	}
 	
+	
+
 	
 })

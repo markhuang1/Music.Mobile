@@ -1,393 +1,461 @@
 <!DOCTYPE html>
 
 <html>
-	
+
 	<head>
-		
+
 		<meta charset="utf-8" />
-		
+
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-		
+
 		<title></title>
-		
+
 		<link rel="stylesheet" href="css/index.css" />
-		
+
 		<link rel="stylesheet" href="css/Response.css" />
-	
+
 		<link rel="stylesheet" href="css/swiper.min.css" />
-	
+
 		<link rel="stylesheet" href="http://apps.bdimg.com/libs/fontawesome/4.4.0/css/font-awesome.min.css">
-		
+
 		<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<!--<script type="text/javascript" src="js/jquery-1.11.0.js"></script>-->
 		
-		<script type="text/javascript" src="js/jquery-1.11.0.js" ></script>
-		
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+
 		<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	
-		<script type="text/javascript" src="js/important.js" ></script>
+
+		<script type="text/javascript" src="js/important.js"></script>
 		
-		<script type="text/javascript" src="js/swiper.min.js" ></script>
+		<!--<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>-->
+
+		<script type="text/javascript" src="js/swiper.min.js"></script>
+
+		<script type="text/javascript" src="js/AjaxResponse.js"></script>
 		
+		<script type="text/javascript" src="js/layzloading.js" ></script>
+
 	</head>
-	
+
 	<body>
 		<div class="top-nav">
-					
-				<div class="top-nav-left">
-					
-					<i class="fa fa-microphone" aria-hidden="true"></i>
-					
+
+			<div class="top-nav-left">
+
+				<i class="fa fa-microphone" aria-hidden="true"></i>
+
+			</div>
+
+			<div class="top-nav-mid">
+
+				<div class="input-frame">
+
+					<i class="fa fa-search" aria-hidden="true"></i>
+
+					<span>猜你喜欢 葬花</span>
+
 				</div>
-				
-				<div class="top-nav-mid">
-					
-					<div class="input-frame">
-						
-						<i class="fa fa-search" aria-hidden="true"></i>
-						
-						<span>猜你喜欢 葬花</span>
-						
-					</div>
-					
-				</div>
-				
-				<div class="top-nav-right">
-					
-					<p class="glyphicon glyphicon-stats" aria-hidden="true"></p>
-					
-				</div>
-				
+
+			</div>
+
+			<div class="top-nav-right">
+
+				<p class="glyphicon glyphicon-stats" aria-hidden="true"></p>
+
+			</div>
+
 		</div>
-		
+
 		<div class="music-class">
-				
+
 			<ul>
-				
-				<li><span index = "1">音乐</span></li>
-				
-				<li><span index = "2">视屏</span></li>
-				
-				<li><span index = "3">电台</span></li>
-				
+
+				<li><span index="1">音乐</span></li>
+
+				<li><span index="2">视屏</span></li>
+
+				<li><span index="3">电台</span></li>
+
 			</ul>
-			
+
 		</div>
-		
-		
+
 		<div class="swiper-container box">
-			
-	        <div class="swiper-wrapper">
-	        	
-	            <div class="swiper-slide">
-	            	<div id="main-container">
-			
-			<div class="chooses">
-				
-				<div class="music"  index="1">
-				
-				<div id="scorllimg">
-				<!--轮播图-->
-				
-					
-				</div>
-				
-				<div class="project">
-					
-					<ul>
-						
-						<li>
-							
-							<i class="fa fa-gg-circle" aria-hidden="true"></i>
-							
-							<br>
-							
-							<span style="color:black">私人FM</span>
-							
-						</li>
-						
-						<li>
-							
-							<i class="fa fa-calendar" aria-hidden="true"></i>
-							
-							<br>
-							
-							<span style="color:black">每日推荐</span>
-							
-						</li>
-						
-						<li>
-							
-							<i class="fa fa-music" aria-hidden="true"></i>
-							
-							<br>
-							
-							<span style="color:black">歌单</span>
-							
-						</li>
-						
-						<li>
-							
-							<i class="fa fa-bar-chart" aria-hidden="true"></i>
-							
-							<br>
-							
-							<span style="color:black">排行</span>
-							
-						</li>
-						
-					</ul>
-					
-				</div>
-				
-				<div class="music-list">
-					
-					<div class="music-list-title">
-						
-						<span>推荐歌单 ></span>
-						
+
+			<div class="swiper-wrapper">
+
+				<div class="swiper-slide">
+					<div id="main-container">
+
+						<div class="chooses">
+
+							<div class="music" index="1">
+
+								<div id="scorllimg">
+									<!--轮播图-->
+
+									<div class="swiper-container imgscroll">
+
+										<div class="swiper-wrapper">
+
+											<div class="swiper-slide imgset">
+												<img src="" />
+											</div>
+
+											<div class="swiper-slide imgset">
+												<img src="" />
+											</div>
+
+											<div class="swiper-slide imgset">
+												<img src="" />
+											</div>
+
+											<div class="swiper-slide imgset">
+												<img src="" />
+											</div>
+
+											<div class="swiper-slide imgset">
+												<img src="" />
+											</div>
+
+											<div class="swiper-slide imgset">
+												<img src="" />
+											</div>
+
+										</div>
+
+										<div class="swiper-pagination"></div>
+
+									</div>
+
+								</div>
+
+								<div class="project">
+
+									<ul>
+
+										<li>
+
+											<i class="fa fa-gg-circle" aria-hidden="true"></i>
+
+											<br>
+
+											<span style="color:black">私人FM</span>
+
+										</li>
+
+										<li>
+
+											<i class="fa fa-calendar" aria-hidden="true"></i>
+
+											<br>
+
+											<span style="color:black">每日推荐</span>
+
+										</li>
+
+										<li>
+
+											<i class="fa fa-music" aria-hidden="true"></i>
+
+											<br>
+
+											<span style="color:black">歌单</span>
+
+										</li>
+
+										<li>
+
+											<i class="fa fa-bar-chart" aria-hidden="true"></i>
+
+											<br>
+
+											<span style="color:black">排行</span>
+
+										</li>
+
+									</ul>
+
+								</div>
+
+								<div class="music-list">
+
+									<div class="music-list-title">
+
+										<span>推荐歌单 ></span>
+
+									</div>
+
+									<div class="songs-list">
+
+										<ul>
+
+											<li>
+
+												<div class="back-img">
+
+												</div>
+
+												<div class="songs-describe">
+
+												</div>
+
+											</li>
+
+											<li>
+
+												<div class="back-img">
+
+												</div>
+
+												<div class="songs-describe">
+
+												</div>
+
+											</li>
+
+											<li>
+
+												<div class="back-img">
+
+												</div>
+
+												<div class="songs-describe">
+
+												</div>
+
+											</li>
+
+										</ul>
+
+										<ul>
+
+											<li>
+
+												<div class="back-img">
+
+												</div>
+
+												<div class="songs-describe">
+
+												</div>
+
+											</li>
+
+											<li>
+
+												<div class="back-img">
+
+												</div>
+
+												<div class="songs-describe">
+
+												</div>
+
+											</li>
+
+											<li>
+
+												<div class="back-img">
+
+												</div>
+
+												<div class="songs-describe">
+
+												</div>
+
+											</li>
+
+										</ul>
+
+									</div>
+
+								</div>
+
+								<div class="music-list">
+
+									<div class="music-list-title">
+
+										<span>独家放送 ></span>
+
+									</div>
+
+									<div class="songs-list">
+
+										<ul>
+
+											<li>
+
+												<div class="back-img">
+
+												</div>
+
+												<div class="songs-describe">
+
+												</div>
+
+											</li>
+
+											<li>
+
+												<div class="back-img">
+
+												</div>
+
+												<div class="songs-describe">
+
+												</div>
+
+											</li>
+
+											<li>
+
+												<div class="back-img">
+
+												</div>
+
+												<div class="songs-describe">
+
+												</div>
+
+											</li>
+
+										</ul>
+
+										<div class="movies">
+
+											<div class="mov-text"></div>
+
+										</div>
+
+									</div>
+
+								</div>
+
+							</div>
+							<div class="hiddens">
+
+							</div>
+
+						</div>
+
 					</div>
-					
-					<div class="songs-list">
-						
-						<ul>
-							
-							<li>
-								
-								<div class="back-img">
-									
-								</div>
-								
-								<div class="songs-describe">
-									
-								</div>
-								
-							</li>
-							
-							<li>
-								
-								<div class="back-img">
-									
-								</div>
-								
-								<div class="songs-describe">
-									
-								</div>
-								
-							</li>
-							
-							<li>
-								
-								<div class="back-img">
-									
-								</div>
-								
-								<div class="songs-describe">
-									
-								</div>
-								
-							</li>
-							
-						</ul>
-						
-						<ul>
-							
-							<li>
-								
-								<div class="back-img">
-									
-								</div>
-								
-								<div class="songs-describe">
-									
-								</div>
-								
-							</li>
-							
-							<li>
-								
-								<div class="back-img">
-									
-								</div>
-								
-								<div class="songs-describe">
-									
-								</div>
-								
-							</li>
-							
-							<li>
-								
-								<div class="back-img">
-									
-								</div>
-								
-								<div class="songs-describe">
-									
-								</div>
-								
-							</li>
-							
-						</ul>
-						
-					</div>
-					
+
 				</div>
-				
-				<div class="music-list">
-					
-					<div class="music-list-title">
-						
-						<span>独家放送 ></span>
-						
-					</div>
-					
-					<div class="songs-list">
-						
-						<ul>
-							
-							<li>
-								
-								<div class="back-img">
-									
-								</div>
-								
-								<div class="songs-describe">
-									
-								</div>
-								
-							</li>
-							
-							<li>
-								
-								<div class="back-img">
-									
-								</div>
-								
-								<div class="songs-describe">
-									
-								</div>
-								
-							</li>
-							
-							<li>
-								
-								<div class="back-img">
-									
-								</div>
-								
-								<div class="songs-describe">
-									
-								</div>
-								
-							</li>
-							
-						</ul>
-						
-						<div class="movies">
-							
-							<div class="mov-text"></div>
-							
+
+				<div class="swiper-slide">
+
+					<div class="videos" index="2">
+
+						<div class="video-demo">
+
+							<img src="img/04.jpg" />
+
 						</div>
 						
+						<div class="video-demo">
+
+							<img src="img/04.jpg" />
+
+						</div>
+						
+						<div class="video-demo">
+
+							<img src="img/04.jpg" />
+
+						</div>
+						
+						<div class="video-demo">
+
+							<img src="img/04.jpg" />
+
+						</div>
+						
+						<div class="video-demo">
+
+							<img src="img/04.jpg" />
+
+						</div>
+						
+						<div class="video-demo">
+
+							<img src="img/04.jpg" />
+
+						</div>
+
+						<div class="hiddens">
+
+						</div>
+
 					</div>
 					
+
 				</div>
-				
+
+				<div class="swiper-slide">Slide 2</div>
+
 			</div>
-			<div class="hiddens">
-				
-			</div>
-			
-			</div>
-			
+
 		</div>
-	            
-	            </div>
-	            
-	            <div class="swiper-slide">
-	            	
-			
-			<div class="videos" index="2">
-				
-				<div class="video-demo">
-					
-					<img src="img/04.jpg" />
-					
-				</div>
-				
-				<div class="hiddens">
-				
-				</div>
-				
-			</div>
-	            	
-	            </div>
-	            
-			
-			 <div class="swiper-slide">Slide 2</div>
-			 
-	        </div>
-	        
-    	</div>
-		
-		
+
 		<!--<div class="box">
 		
 		
 		
 		</div>-->
-		
+
 		<div class="bottom-nav">
-					
+
 			<ul>
-				
+
 				<li>
-					
+
 					<i class="fa fa-cloud" aria-hidden="true"></i>
-					
+
 					<br />
-					
+
 					<span>发现音乐</span>
-					
+
 				</li>
-				
+
 				<li>
-					
+
 					<i class="fa fa-music" aria-hidden="true"></i>
-					
+
 					<br />
-					
+
 					<span>我的音乐</span>
-					
+
 				</li>
-				
+
 				<li>
-					
+
 					<i class="fa fa-user-plus" aria-hidden="true"></i>
-					
+
 					<br />
-					
+
 					<span>朋友</span>
-					
+
 				</li>
-				
+
 				<li>
-					
+
 					<i class="fa fa-user" aria-hidden="true"></i>
-					
+
 					<br />
-					
+
 					<span>账号</span>
-					
+
 				</li>
-				
+
 			</ul>
-			
+
 		</div>
 	</body>
-	
-	<script type="text/javascript" src="js/jquery.ScrollImg.js" ></script>
-	
-	<script type="text/javascript" src="js/index.js" ></script>
-	
+
+	<script type="text/javascript" src="js/jquery.ScrollImg.js"></script>
+
+	<script type="text/javascript" src="js/index.js"></script>
+
 </html>
