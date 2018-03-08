@@ -1,0 +1,292 @@
+html,body{
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+#main-container{
+	height: 100%;
+	width: 100%;
+	overflow-x: hidden;
+	z-index: 1;
+	-webkit-overflow-scrolling : touch;
+	position: relative;
+}
+#main-container::-webkit-scrollbar{
+    display: none;
+}
+.top-nav{
+	width: 100%;
+	height: 2.5rem;
+	background-color: rgb(212,60,51);
+	position: fixed;
+	top: 0;
+	z-index: 99;
+}
+.top-nav>div{
+	float: left;
+}
+.top-nav-left{
+	width: 20%;
+	height: 100%;
+	text-align: center;
+	color: white;
+}
+.top-nav-left>i{
+	font-size: 1.5rem;
+	line-height: 2.5rem;
+}
+.top-nav-mid{
+	width: 60%;
+	position: relative;
+	height: 100%;
+}
+.input-frame{
+	width: 80%;
+	height: 50%;
+	background-color: white;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	border-radius:60px;
+	text-align: center;
+}
+.top-nav-right{
+	width: 20%;
+	height: 100%;
+	position: relative;
+}
+.top-nav-right p{
+	height: 100%;
+	width: 100%;
+	color: white;
+	text-align: center;
+	font-size: 1.5rem;
+	line-height: 2.2rem;
+}
+.input-frame i,span{
+	font-size: 0.6rem;
+	line-height: 1.4rem;
+	color: gray;
+}
+.music{
+	width: 100%;
+	height: auto;
+	margin-top: 4.5rem;
+	z-index: 9;
+	display: inline-block;
+	margin-left: 0;
+}
+.music-class{
+	width: 100%;
+	height: 2rem;
+	background-color: white;
+	position: fixed;
+	top: 2.5rem;
+	z-index: 99;
+}
+.music-class ul{
+	width: 100%;
+	height: 100%;
+	padding: 0;
+}
+.music-class li{
+	height: 100%;
+	width: 33.3%;
+	list-style: none;
+	font-size: 0.7rem;
+	float: left;
+	text-align: center;
+	cursor: pointer;
+}
+.music-class span{
+	display: inline-block;
+	height: 100%;
+	line-height: 2.2rem;
+	padding-left: 5px;
+	padding-right: 5px;
+	color: black;
+	transition: all .5s;
+}
+.music-class li:nth-child(1)>span{
+	border-bottom: 0.1rem solid red;
+}
+/*轮播样式插件*/
+
+#scorllimg{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	position: relative;
+}
+.project{
+	 height: 4rem;
+	 width: 100%;
+	 border-bottom: 1px solid gray;
+}
+.project ul{
+	width: 100%;
+	height: 100%;
+	padding: 0;
+}
+.project li{
+	list-style: none;
+	float: left;
+	width: 25%;
+	text-align: center;
+	font-size: 1.5rem;
+	color: rgb(212,60,51);
+	line-height: 1.5rem;
+}
+.project i{
+	margin-top: 0.5rem;
+}
+.music-list{
+	width: 100%;
+	height: 20rem;
+	position: relative;
+}
+.music-list-title{
+	height: 1rem;
+	width: 100%;
+	background-color: white;
+	border-left: 2px solid red;
+	font-size: 0.6rem;
+	position: absolute;
+	top: 1rem;
+}
+.music-list-title>span{
+	margin-left: 0.5rem;
+	line-height: 1.2rem;
+	font-size: 0.7rem;
+	color: black;
+}
+.songs-list{
+	width: 100%;
+	height: 12rem;
+	position: absolute;
+	top: 3rem;
+}
+.songs-list ul{
+	width: 100%;
+	height:8rem;
+	padding: 0;
+	margin-bottom: 0.2rem;
+	position: relative;
+}
+.songs-list li{
+	width:33%;
+	height: 100%;
+	display: inline-block;
+	list-style: none;
+}
+.songs-list li:nth-child(1){
+	float: left;
+}
+.songs-list li:nth-child(2){
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+.songs-list li:nth-child(3){
+	float: right;
+}
+.back-img{
+	width: 100%;
+	background-size: cover;
+}
+.songs-describe{
+	width: 100%;
+	font-size: 0.6rem;	
+	overflow: hidden;
+}
+.bottom-nav{
+	height: 2.5rem;
+	width: 100%;
+	background-color: rgba(0,0,0,0.9);
+	position: fixed;
+	z-index: 10;
+	bottom: 0;
+	left: 0;
+}
+.bottom-nav ul{
+	width: 100%;
+	height: 100%;
+	color: darkgray;
+	font-size: 0.5rem;
+	padding: 0;
+}
+.bottom-nav li{
+	height: 100%;
+	width: 25%;
+	float: left;
+	text-align: center;
+	line-height: 0rem;
+	list-style: none;
+}
+.bottom-nav li:first-child{
+	color: white;
+}
+.bottom-nav li>i{
+	font-size: 1rem;
+	margin-top: 0.4rem;
+}
+.bottom-nav li>span{
+	position: relative;
+	top: -0.2rem;
+	font-size: 0.5rem;
+}
+.hiddens{
+	height: 2rem;
+	width: 100%;
+}
+.movies{
+	width: 100%;
+	height: 8rem;
+	background-size: cover;
+	position: relative;
+}
+.mov-text{
+	width: 100%;
+	height: 1rem;
+	font-size: 0.6rem;
+	position: absolute;
+	top: 7rem;
+	color: white;
+	background-color: rgba(0,0,0,0.5);
+	line-height:1rem;
+	text-align:center
+}
+.chooses{
+	width: calc(100%);
+	height: auto;
+	position: absolute;
+	left: 0;
+	transition: all .5s; 
+}
+.videos{
+	width: calc(100%);
+	height: auto;
+	margin-top: 4.5rem;
+	background-color: pink;
+	position: absolute;
+	left: calc(0);
+	
+}
+.video-demo{
+	width: 100%;
+	height: auto;
+}
+.video-demo>img{
+	width: 100%;
+	margin: 0;
+}
+.box{
+	height: 100%;
+	width: 100%;
+	position: relative;
+}
