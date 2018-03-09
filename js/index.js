@@ -1,14 +1,38 @@
 $(function (){
 			
-		var obj = {
-				"attrName":"bacimg",
-				"dom":"#scorllimg",
-				"color1":"rgb(212,60,51)",
-				"color2":"rgba(255,255,255,0.5)"
-			}
+	var obj = {
+			"attrName":"bacimg",
+			"dom":"#scorllimg",
+			"color1":"rgb(212,60,51)",
+			"color2":"rgba(255,255,255,0.5)"
+		}
 //			$.scrollImgs(obj);//图片轮播
 	
-	new AJAX(randers);
+	var HtmlDom = `
+		<div class="video-demo">
+							
+			<div class="img-head-infomation">
+				
+				<div class="head-image">
+					
+					<img src="img/songs1.jpg"/>
+					<span>电影时光</span>
+				</div>
+				
+				<div class="video-class">电影</div>
+				
+			</div>
+							
+			<img src="img/04.jpg" />
+							
+			<div class="img-imformation">学生时代的种子被谁扼杀了</div>
+
+		</div>
+	`
+	
+	var urls = 'img.json';
+	
+	new AJAX(randers,urls);
 	
 	
 	
@@ -33,7 +57,10 @@ $(function (){
 		var swiper = new Swiper('.box',{
 	    	onTransitionEnd: function(swiper){
 	        	  listbingevent();
-	    	}
+	    	},
+			onSlideNextStart: function(swiper){
+		      	randerHtmlDom();//回掉渲染节点
+		     }
 		});
 	}
 	
@@ -98,7 +125,7 @@ $(function (){
 	}
 	
 	function clickDom(){
-		$('.music-class li').bind('click',function (){
+		$('.music-class li').bind('click',function (event){
 			
 //			var dom;
 //			if(e.target.tagName.toUpperCase()!='SPAN'){
@@ -110,7 +137,7 @@ $(function (){
 //			var index = dom.getAttribute('index');
 //			nowPage = index;
 
-			var e = e||window.event;
+			var e = event;
 			e.stopPropagation();
 			if(!makes){
 				var doms;
@@ -165,14 +192,15 @@ $(function (){
 		var data = data.res;
 		var img = $('.imgset img');
 		var len = img.length;
-		console.log(data);
 		for(var i = 0;i<len;i++){
 			img[i].setAttribute('src',data[i].img);
 		}
 		
 	}
 	
-	
+	function randerHtmlDom(){
+		
+	}
 
 	
 })

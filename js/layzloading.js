@@ -4,7 +4,6 @@
 	const layzLod = {
 		"layzLoadings" : function (obj){
 			//寻找元素
-			alert(111);
 			var attrName = obj.attrName;
 			let doms = $('['+attrName+']');
 			let ary = [];//定义空数组保存节点
@@ -37,7 +36,7 @@
 				clearTimeout(setTime);
 				var setTime = setTimeout(function (){
 					randerImg();
-				},500);
+				},50);
 				
 			});
 			
@@ -54,8 +53,6 @@
 						return;
 					}
 				}
-				
-				alert(ary[0].style.backgroundImage);
 				
 			}
 			

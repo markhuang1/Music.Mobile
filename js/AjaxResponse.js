@@ -1,4 +1,4 @@
-function AJAX(callback){
+function AJAX(callback,urls){
 	
 	var xhr;
 	if(window.XMLHttpRequest){
@@ -7,7 +7,7 @@ function AJAX(callback){
 	else{
 		xhr = new ActiveXObject("Microsoft.XMLHTTP");
 	}
-	xhr.open('GET','img.json',true);
+	xhr.open('GET',urls,true);
 	xhr.send(null);
 	
 	xhr.onreadystatechange = function (){
