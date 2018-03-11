@@ -1,4 +1,4 @@
-function AJAX(callback,urls){
+function AJAX(callback,urls,bool){
 	
 	var xhr;
 	if(window.XMLHttpRequest){
@@ -7,7 +7,7 @@ function AJAX(callback,urls){
 	else{
 		xhr = new ActiveXObject("Microsoft.XMLHTTP");
 	}
-	xhr.open('GET',urls,true);
+	xhr.open('GET',urls,bool);
 	xhr.send(null);
 	
 	xhr.onreadystatechange = function (){

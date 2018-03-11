@@ -5,6 +5,7 @@
 		"layzLoadings" : function (obj){
 			//寻找元素
 			var attrName = obj.attrName;
+			var set = obj.attrSet;
 			let doms = $('['+attrName+']');
 			let ary = [];//定义空数组保存节点
 			for(var i =0 ;i < doms.length ;i++){
@@ -15,22 +16,9 @@
 			randerImg();
 			
 			//添加页面滚动事件
-//			$("#main-container")[0].addEventListener('scroll', mainscroll,true);
-//			
-//			function mainscroll(){
-//				if(ary.length==0){
-//					$("#main-container").removeEventListener("scroll",mainscroll,true);
-//				}
-//				clearTimeout(setTime);
-//				var setTime = setTimeout(function (){
-//					randerImg();
-//					alert(1);
-//				},500);
-//			}
-			
-			$("#main-container").bind('scroll',function (){
+			$(obj.dom).bind('scroll',function (){
 				if(ary.length==0){
-					$("#main-container").unbind("scroll");
+					$(obj.dom).unbind("scroll");
 				}
 				//函数截流
 				clearTimeout(setTime);
@@ -45,7 +33,12 @@
 				
 				for(var i = 0 ; i < ary.length ; i++){
 					if(jugeView(ary[i])){
-						ary[i].style.backgroundImage = "url("+ary[i].getAttribute('bacimg')+")";
+						if(set=='backgroundImage'){
+							ary[i].style.backgroundImage = "url("+ary[i].getAttribute(attrName)+")";
+						}
+						else if(set =="src"){
+							ary[i].src= ary[i].getAttribute(attrName);
+						}
 						ary.splice(i,1);
 						i--;
 					}

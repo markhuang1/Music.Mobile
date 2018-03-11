@@ -2,37 +2,17 @@ $(function (){
 			
 	var obj = {
 			"attrName":"bacimg",
-			"dom":"#scorllimg",
-			"color1":"rgb(212,60,51)",
-			"color2":"rgba(255,255,255,0.5)"
+			"attrSet":"backgroundImage",
+			"dom":"#main-container"
 		}
 //			$.scrollImgs(obj);//图片轮播
 	
-	var HtmlDom = `
-		<div class="video-demo">
-							
-			<div class="img-head-infomation">
-				
-				<div class="head-image">
-					
-					<img src="img/songs1.jpg"/>
-					<span>电影时光</span>
-				</div>
-				
-				<div class="video-class">电影</div>
-				
-			</div>
-							
-			<img src="img/04.jpg" />
-							
-			<div class="img-imformation">学生时代的种子被谁扼杀了</div>
-
-		</div>
-	`
-	
+	var videoReady = false;//视屏加载完毕?false
+	var radioReady = false;//电台加载完毕？false
 	var urls = 'img.json';
-	
-	new AJAX(randers,urls);
+	var marks = true;
+	let arys=[];
+	new AJAX(randers,urls,true);
 	
 	
 	
@@ -40,10 +20,13 @@ $(function (){
 	
 	var makes = true;
 	
+	paging();
 	clickDom();
 	moves();//页面滑动
 	
 	imgscrolls();
+	
+	
 	
 	function imgscrolls(){//图片滑动
 		var swiper = new Swiper('.imgscroll',{
@@ -57,10 +40,11 @@ $(function (){
 		var swiper = new Swiper('.box',{
 	    	onTransitionEnd: function(swiper){
 	        	  listbingevent();
-	    	},
-			onSlideNextStart: function(swiper){
-		      	randerHtmlDom();//回掉渲染节点
-		     }
+	    	}
+//	    	,
+//			onSlideNextStart: function(swiper){
+//		      	randerHtmlDom();//回掉渲染节点
+//		     }
 		});
 	}
 	
@@ -121,7 +105,7 @@ $(function (){
 		nowPage = num/width;
 		makes = true;
 		$('span[index='+(nowPage+1)+']').click();
-	
+		randerHtmlDom();
 	}
 	
 	function clickDom(){
@@ -155,6 +139,9 @@ $(function (){
 			};
 			$('span[index='+(nowPage+1)+']').css({"border-bottom":"0.1rem solid red"});
 			$('.swiper-wrapper')[0].style.cssText = 'transition-duration: 300ms;transform:translate3d('+(-nowPage)*$(window).width()+'px, 0px, 0px);';
+			setTimeout(function (){
+					randerHtmlDom();
+				},100);
 			makes = false;
 		});
 	}
@@ -198,9 +185,256 @@ $(function (){
 		
 	}
 	
-	function randerHtmlDom(){
+	function randerHtmlDom(){//渲染节点
 		
+		if(nowPage == 1){
+			if(videoReady){
+					return;
+				}
+			new AJAX(randerVideos,"video.json",true);
+		}
+		else if(nowPage == 2){
+			if(radioReady){
+					return;
+				}
+			new AJAX(randerRadio,"audoi.json",true);
+		}
+		else{
+			return;
+		}
+	}
+	
+	function randerVideos(data){
+		$('.videos .loading-img').remove();
+		var data = data.res;
+		var len = data.length;
+		for(var i = 0 ; i < len ; i++){
+				var HtmlDom = `
+					<div class="video-demo"  videoimg="${data[i].contentimg}">
+										
+						<div class="img-head-infomation">
+							
+							<div class="head-image">
+								<img src="" headimg="${data[i].headimg}"/>
+								<span>${data[i].title}</span>
+							</div>
+							
+							<div class="video-class">${data[i].class}</div>
+							
+						</div>
+										
+						<div class="img-imformation">${data[i].contentText}</div>
+			
+					</div>
+				`
+//			$(HtmlDom).appendTo($('.videos'));
+			$(HtmlDom).appendTo($('.videos')).offset().top;
+		}
+		var obj = {
+			"attrName":"videoimg",
+			"attrSet":"backgroundImage",
+			"dom":".videos"
+		}
+		$.layzLoadings(obj);
+		obj = {
+			"attrName":"headimg",
+			"attrSet":"src",
+			"dom":".videos"
+		}
+		$.layzLoadings(obj);
+		videoReady = true;
 	}
 
+	function randerRadio(data){
+		
+		radioReady = true;
+		$('.radios .loading-img').remove();
+		var scrolls = `
+			<div id="scorllimgs">
+				<!--轮播图-->
+
+				<div class="swiper-container imgscrolls">
+
+					<div class="swiper-wrapper secondscroll">
+					
+					</div>
+
+					<div class="swiper-pagination"></div>
+
+				</div>
+
+			</div>
+		`
+		$('.loading-gif').before(scrolls);
+		var scrollimgs = data.res;
+		for(let i = 0 ; i < scrollimgs.length ; i++){
+			var img = `
+				<div class="swiper-slide imgset">
+					<img src="${scrollimgs[i].img}" />
+				</div>
+			`
+			$('.secondscroll').append(img);
+		}
+		var swiper = new Swiper('.imgscrolls',{
+			autoplay:2500,
+			pagination : '.swiper-pagination',
+			paginationClickable :true
+		});
+		
+		var radioClass = `
+			<ul class="radio-class">
+				<li>电台分类</li>
+				<li>电台排行</li>
+			</ul>
+			<div class="music-list radiose">
+
+				<div class="video-list-title">
+
+					<p>${data.pay.class} ></p>
+
+				</div>
+
+			</div>
+		`
+		$('.loading-gif').before(radioClass);
+		var payaduio = data.pay.arc;
+		for(let i = 0; i < payaduio.length ; i++){
+			var dom = `
+				<ul class="payproduct">
+					<li class="product-img">
+						
+						<img src="${payaduio[i].img}" width="100%" >
+						
+					</li>
+					<li class="product-information">
+						<p>${payaduio[i].title}</p>
+						<p>${payaduio[i].discrip}</p>
+						<p>${payaduio[i].actor}</p>
+						<p>${payaduio[i].pay}</p>
+					</li>
+				</ul>
+			`
+			$('.radiose').append(dom);
+		}
+		var ojso = {
+			"doms":".radios",
+			"nodes":".loading-gif"
+		}
+		new infinteLoading(ojso,cback);
+		
+	}
+	
+	function cback(){
+		if(marks){
+			new AJAX(randerLoading,"audoi.json",true);
+			marks = false;
+		}
+		else{
+			randerLoading(false);
+		}
+	}
+	
+	
+	function randerLoading(data){
+		if(data){
+			let datas = data.audios;
+			let len  = datas.length;
+			
+			for(let i = 0;i<len;i++){
+				arys.push(datas[i]);
+			}
+		}
+		if(arys.length==0){
+			return;
+		}
+		
+		let dom = `
+			<div class="music-list radioses">
+
+				<div class="music-list-title video-title">
+
+					<span>${arys[0].class} ></span>
+
+				</div>
+				<div class="songs-list video-list">
+				<ul>
+		
+		`
+		
+		for(let i =0;i<arys[0].arc.length;i++){
+			dom = dom + 
+
+					`<li>
+
+						<div class="radio-img" style="background-image:url(${arys[0].arc[i].img})">
+
+						</div>
+
+						<div class="songs-describe">
+							${arys[0].arc[i].discrip}
+						</div>
+
+					</li>`			
+		}
+		dom = dom+`
+			</ul>
+			</div>
+			</div>
+		`
+		$('.loading-gif').before(dom);
+		arys.splice(0,1);
+	}
+	
+	function paging(){//切换页面
+		
+		$('.pageClass>li').on("click",function (){
+			$('.homePage').removeClass("backmoves").addClass("moveHomePage");
+			$('.secondPage').removeClass("backmovesi").addClass("moveSecondPage");
+			$(".secondPage-box").children().remove();
+			new loadPages($(this).attr("index"),".secondPage-box");
+		});
+		
+		$('.SPH li:first-child').bind("click",function(){
+			$('.secondPage').removeClass("moveSecondPage").addClass("backmovesi");
+			$('.homePage').removeClass("moveHomePage").addClass("backmoves");
+		});
+		
+	}
+	
+	bottomNavClick();
+	
+	function bottomNavClick(){
+		$(".bottom-nav li").bind("click",function(event){
+			
+			$(".bottom-nav li").css({"color":"darkgray"})
+			
+			let dom;
+			if(event.target.tagName.toUpperCase()!="LI"){
+				dom = $(event.target).parent('li');
+			}
+			else{
+				dom = event.target;
+			}
+			$(dom).css({"color":"white"});
+			showMyPage(dom);
+		})
+	}
+	
+	function showMyPage(nodes){
+		let texts = $(nodes).attr("index");
+		if(texts=="find-music"){
+			$(".addPage").hide();
+			$('.find-music').show();
+		}
+		else{
+			$(".find-music").hide();
+			$(".addPage").show();
+			$(".addPages").children().remove();
+			new loadPages("mymusic",".addPages")
+		}
+	}
+	
+	
+	
 	
 })

@@ -1,0 +1,83 @@
+{
+	"msg":"ok",
+	"res":[
+		{"img":"img/01.jpg"},
+		{"img":"img/02.jpg"},
+		{"img":"img/03.jpg"},
+		{"img":"img/04.jpg"},
+		{"img":"img/05.jpg"},
+		{"img":"img/06.jpg"}
+	],
+	"pay":{
+		"class":"付费精品",
+		"arc":[
+			{"title":"电台情歌","img":"img/radio1.jpg","discrip":"电影《从你的全世界路过》电台版推广曲","actor":"邓超","pay":"15.9"},
+			{"title":"听的那一刻就注定了永远","img":"img/radio2.jpg","discrip":" 有时候喜欢一首歌喜欢一个歌手，并不是因为他唱得多棒或者这歌有多好听。只是在自己有限的记忆里，总有一些挥之不去的歌声一些挥之不去的身影。 所有求之不得的东西","actor":"心有力而","pay":"19.9"},
+			{"title":"没有收拾残局的能力","img":"img/radio3.jpg","discrip":"没有收拾残局的能力 就别放纵善变的情绪","actor":"mayuko然","pay":"20"}
+		]
+	},
+	"audios":[
+		{
+			"class":"电台个性推荐",
+			"arc":[
+				{"img":"img/audiostation1.jpg","discrip":"当你穿山越岭，我把我唱给你听"},
+				{"img":"img/audiostation2.jpg","discrip":"我想一个人静一静"},
+				{"img":"img/audiostation3.jpg","discrip":"拔flow相助 | 围着火炉听嘻哈"}
+			]
+		},
+		{
+			"class":"有声书",
+			"arc":[
+				{"img":"img/audiostation4.jpg","discrip":" 离家500里"},
+				{"img":"img/audiostation5.jpg","discrip":"2018星巴克新春档期背景音乐"},
+				{"img":"img/audiostation6.jpg","discrip":" 《为爱追寻》梦幻西游桃夭夭番外篇"}
+			]
+		},
+		{
+			"class":"热门推荐",
+			"arc":[
+				{"img":"img/audiostation7.jpg","discrip":"电视剧《风筝》主题曲及相关背景音乐"},
+				{"img":"img/audiostation8.jpg","discrip":" 【3D环绕】BINGBIAN病变"}
+			]
+		},
+		{
+			"class":"热门推荐",
+			"arc":[
+				{"img":"img/audiostation7.jpg","discrip":"电视剧《风筝》主题曲及相关背景音乐"},
+				{"img":"img/audiostation8.jpg","discrip":" 【3D环绕】BINGBIAN病变"}
+			]
+		},
+		{
+			"class":"热门推荐",
+			"arc":[
+				{"img":"img/audiostation7.jpg","discrip":"电视剧《风筝》主题曲及相关背景音乐"},
+				{"img":"img/audiostation8.jpg","discrip":" 【3D环绕】BINGBIAN病变"}
+			]
+		},
+		{
+			"class":"热门推荐",
+			"arc":[
+				{"img":"img/audiostation7.jpg","discrip":"电视剧《风筝》主题曲及相关背景音乐"},
+				{"img":"img/audiostation8.jpg","discrip":" 【3D环绕】BINGBIAN病变"}
+			]
+		},
+		{
+			"class":"热门推荐",
+			"arc":[
+				{"img":"img/audiostation7.jpg","discrip":"电视剧《风筝》主题曲及相关背景音乐"},
+				{"img":"img/audiostation8.jpg","discrip":" 【3D环绕】BINGBIAN病变"}
+			]
+		},
+		{
+			"class":"热门推荐",
+			"arc":[
+				{"img":"img/audiostation7.jpg","discrip":"电视剧《风筝》主题曲及相关背景音乐"},
+				{"img":"img/audiostation8.jpg","discrip":" 【3D环绕】BINGBIAN病变"}
+			]
+		}
+	
+		
+		
+		
+	]
+}

@@ -1,0 +1,12 @@
+{
+	"msg":"ok",
+	"res":[
+		{"headimg":"img/headimg.jpg","title":"特效","class":"动画制作","contentimg":"img/video1.jpg","contentText":"好吧用Adobe After Effects CC简称(AE)制作的五分钱特效"},
+		{"headimg":"img/headimg.jpg","title":"特效","class":"动画制作","contentimg":"img/video2.jpg","contentText":"好吧用Adobe After Effects CC简称(AE)制作的五分钱特效"},
+		{"headimg":"img/headimg.jpg","title":"特效","class":"动画制作","contentimg":"img/video3.jpg","contentText":"好吧用Adobe After Effects CC简称(AE)制作的五分钱特效"},
+		{"headimg":"img/headimg.jpg","title":"特效","class":"动画制作","contentimg":"img/video4.jpg","contentText":"好吧用Adobe After Effects CC简称(AE)制作的五分钱特效"},
+		{"headimg":"img/headimg.jpg","title":"特效","class":"动画制作","contentimg":"img/video5.jpg","contentText":"好吧用Adobe After Effects CC简称(AE)制作的五分钱特效"},
+		{"headimg":"img/headimg.jpg","title":"特效","class":"动画制作","contentimg":"img/video6.jpg","contentText":"好吧用Adobe After Effects CC简称(AE)制作的五分钱特效"},
+		{"headimg":"img/headimg.jpg","title":"特效","class":"动画制作","contentimg":"img/video7.jpg","contentText":"好吧用Adobe After Effects CC简称(AE)制作的五分钱特效"}
+	]
+}

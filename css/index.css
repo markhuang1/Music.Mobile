@@ -3,6 +3,7 @@ html,body{
 	width: 100%;
 	padding: 0;
 	margin: 0;
+	overflow: hidden;
 }
 #main-container{
 	height: 100%;
@@ -122,6 +123,12 @@ html,body{
 	overflow: hidden;
 	position: relative;
 }
+#scorllimgs{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	position: relative;
+}
 .project{
 	 height: 4rem;
 	 width: 100%;
@@ -199,6 +206,11 @@ html,body{
 	width: 100%;
 	background-size: cover;
 }
+.radio-img{
+	width: 100%;
+	padding-bottom: 100%;
+	background-size: cover;
+}
 .songs-describe{
 	width: 100%;
 	font-size: 0.6rem;	
@@ -270,9 +282,8 @@ html,body{
 }
 .videos{
 	width: 100%;
-	height: 100%;
-	margin-top: 4.5rem;
-	position: absolute;
+	height: calc(100% - 2rem);
+	position: relative;
 	left: calc(0);
 	overflow-x: hidden;
 	-webkit-overflow-scrolling : touch;
@@ -283,11 +294,13 @@ html,body{
 }
 .video-demo{
 	width: 100%;
-	height: auto;
+	height: 8rem;
 	position: relative;
 	margin-bottom: .5rem;
+	background-size: cover;
 }
 .video-demo>img{
+	display: block;
 	width: 100%;
 	margin: 0;
 }
@@ -295,8 +308,13 @@ html,body{
 	height: 100%;
 	width: 100%;
 	position: relative;
+	
 }
 .imgscroll{
+	height: auto;
+	width: 100%;
+}
+.imgscrolls{
 	height: auto;
 	width: 100%;
 }
@@ -317,6 +335,7 @@ html,body{
 	bottom: 0;
 	background-color: rgba(0,0,0,0.8);
 	color: white;
+	font-size: 0.6rem;
 }
 .img-head-infomation{
 	position: absolute;
@@ -356,4 +375,311 @@ html,body{
 	padding-left: 1rem;
 	padding-right: 1rem;
 	border-radius: .6rem;
+}
+.loading-img{
+	width: 100%;
+	height: 8rem;
+	margin-top: 4.5rem;
+	background-image: url(../img/timg.gif);
+	background-size: cover;
+}
+.radios{
+	width: 100%;
+	height: calc(100% - 6.5rem);
+	margin-top: 4.5rem;
+	position: relative;
+	left: calc(0);
+	overflow-x: hidden;
+	-webkit-overflow-scrolling : touch;
+}
+.radios::-webkit-scrollbar{
+    display: none;
+}
+.videos .video-demo:nth-child(1){
+	margin-top: 4.5rem;
+}
+.radio-class{
+	height: auto;
+	font-size: 0.7rem;
+	color: red;
+	padding: 0;
+	margin-bottom: 1.5rem;
+}
+.radio-class li{
+	width: 50%;
+	height: 2rem;
+	text-align: center;
+	line-height: 2rem;
+	list-style: none;
+	float: left;
+}
+.payproduct{
+	width: 100%;
+	padding: 0;
+	padding-bottom: 40%;
+	position: relative;
+}
+.payproduct p{
+	height: 1rem;
+	font-size: .6rem;
+	line-height: 1rem;
+	margin-bottom: 0;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.payproduct p:nth-child(1){
+	overflow: hidden;
+	height: 2rem;
+	font-size: .8rem;
+	line-height: 2rem;
+	margin-bottom: 0;
+}
+.payproduct li{
+	list-style: none;
+}
+.product-img{
+	width:calc(100% / 3);
+	float: left;
+}
+.product-information{
+	width: calc(100% /1.8);
+	height: auto;
+	float: right;
+}
+.radiose{
+	height: auto;
+}
+.radioses{
+	height: 10rem;
+	margin: 0;
+}
+.boot{
+	height: 6.5rem;
+}
+.video-list-title{
+	height: 1rem;
+	width: 100%;
+	background-color: white;
+	border-left: 2px solid red;
+	font-size: 0.6rem;
+	margin-bottom: 1rem;
+}
+.video-list-title>p{
+	height: 1rem;
+	width: 50%;
+	line-height: .25rem;
+	margin-left: .5rem;
+	color: black;
+}
+.loading-gif{
+	width: 5%;
+	display: block;
+	margin: auto;
+	font-size: .6rem;
+	margin-top: -1rem;
+}
+.video-title{
+	margin: 0;
+}
+.video-list{
+	height: 9rem;
+}
+.nav-bottom{
+	height: 100%;
+	width: 100%;
+	position: relative;
+}
+.nav-bottom-content{
+	width: 100%;
+	height: 100%;
+}
+.add{
+	height: 100%;
+	width: 100%;
+	position: relative;
+}
+.homePage{
+	height: 100%;
+	width: 100%;
+	transition: all 1s;
+}
+.secondPage{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	transition: all .5s;
+	transform: translateX(1000%);
+}
+.moveHomePage{
+	animation: moves .5s;
+	animation-fill-mode: forwards;
+}
+@keyframes moves{
+	from{transform: translateX(0);}
+	to{transform: translateX(-100%);}
+}
+.moveSecondPage{
+	animation: movesi .5s;
+	animation-fill-mode: forwards;
+}
+@keyframes movesi{
+	from{transform: translateX(100%);}
+	to{transform: translateX(0);}
+}
+.backmoves{
+	animation: backmove .5s;
+	animation-fill-mode: forwards;
+}
+@keyframes backmove{
+	from{transform: translateX(-100%);}
+	to{transform: translateX(0);}
+}
+.backmovesi{
+	animation: backmov .5s;
+	animation-fill-mode: forwards;
+}
+@keyframes backmov{
+	from{transform: translateX(0);}
+	to{transform: translateX(100%);}
+}
+.secondPageHead{
+	width: 100%;
+	height: 2.5rem;
+	background-color: rgb(212,60,51);
+	position: fixed;
+}
+.secondPageHead ul{
+	padding: 0;
+	height: 100%;
+	width: 100%;
+}
+.secondPageHead li{
+	list-style: none;
+	float: left;
+	width: calc(100% / 3);
+	height: 100%;
+}
+.secondPageHead li:nth-child(1)>span{
+	padding-left: 1rem;
+	font-size: 2.5rem;
+	color: white;
+	line-height: 2.5rem;
+}
+.secondPageHead li:nth-child(2){
+	text-align: center;
+	font-size: .7rem;
+	color: white;
+	line-height: 2.5rem;
+}
+.secondPageHead li:nth-child(3)>span{
+	float: right;
+	padding-right: 1rem;
+	font-size: 1.5rem;
+	color: white;
+	line-height: 2.5rem;
+}
+.scdpageimg{
+	margin-bottom: 1rem;
+}
+.secondPage-box{
+	height: calc(100% - 2.5rem);
+	position: relative;
+	margin-top: 2.5rem;
+	padding-bottom: 2rem;
+	width: 100%;
+	overflow-x: hidden;
+	-webkit-overflow-scrolling : touch;
+}
+.secondPage-box::-webkit-scrollbar{
+    display: none;
+}
+.list-img{
+	background-color: lightgray;
+}
+.musiclist{
+	height: 2rem;
+	width: 100%;
+	padding: 0;
+}
+.musiclist li{
+	float: left;
+	list-style: none;
+	height: 100%;
+}
+.musiclist li:nth-child(1){
+	width: 15%;
+	text-align: center;
+	line-height: 2rem;
+}
+.musiclist li:nth-child(2){
+	width: 75%;
+	border-bottom: 1px solid darkgray;
+}
+.musiclist li:nth-child(3){
+	width: 10%;
+	color: darkgray;
+	font-size: 1rem;
+	padding-right: .5rem;
+	line-height: 2rem;
+	border-bottom: 1px solid darkgray;
+}
+.musiclist p{
+	margin: 0;
+	font-size: .6rem;
+	padding-left: .5rem;
+}
+.musiclist p:nth-child(1){
+	margin: 0;
+	font-size: .7rem;
+}
+.musiclist p:nth-child(2){
+	color: darkgray;
+}
+.find-music{
+	height: 100%;
+	width: 100%;
+}
+.addPage{
+	width: 100%;
+	height: 100%;
+	margin-top: -2.5rem;
+	display: none;
+}
+.addPages{
+	height: calc(100% - 2.5rem);
+	position: relative;
+	margin-top: 2.5rem;
+	padding-bottom: 2rem;
+	width: 100%;
+	overflow-x: hidden;
+	-webkit-overflow-scrolling : touch;
+}
+.addPages::-webkit-scrollbar{
+    display: none;
+}
+.colorset{
+	font-size: 1.5rem;
+	color: red;
+	background-color: white;
+}
+.add-p{
+	width: 60% !important;
+}
+.add-p p{
+	font-size: .8rem !important;
+	color: black;
+	line-height: 2rem !important;
+}
+.add-num{
+	text-align: right;
+	width: 25% !important;
+	font-size: .7rem !important;
+}
+.my-list ul{
+	margin: 0;
+}
+.margin-set{
+	margin-top: 2.5rem;
 }

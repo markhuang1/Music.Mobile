@@ -1,0 +1,19 @@
+{
+	"msg":"ok",
+	"res":{
+		"titleimg":"img/scdimg1.jpg",
+		"title":"每日推荐",
+		"songs":[
+			{"img":"img/scdimg2.jpg","title":"台湾流行音乐","actor":"by 鲑鱼先生"},
+			{"img":"img/scdimg3.jpg","title":"语心集｜内陆岛屿","actor":"by 音左 "},
+			{"img":"img/scdimg4.jpg","title":"踏着清风走向云端【","actor":"by 云音乐曲库"},
+			{"img":"img/scdimg5.jpg","title":"【最爱金曲榜】记住","actor":"by LoveRadio1037"},
+			{"img":"img/scdimg6.jpg","title":"暖阳春草//想把你的喃","actor":"by 海厘"},
+			{"img":"img/scdimg7.jpg","title":"静心竖琴集|细雨湿衣看","actor":"by 洛伦兹力做功酶 "},
+			{"img":"img/scdimg8.jpg","title":"想在阴天里听莫文蔚","actor":"by 云音乐歌单之友 "},
+			{"img":"img/scdimg9.jpg","title":"任贤齐：这里的表演","actor":"by 云音乐歌单之友 "},
+			{"img":"img/scdimg10.jpg","title":"「新世纪」如沐阳光","actor":"by xept "},
+			{"img":"img/scdimg11.jpg","title":"百部韩剧OST合集","actor":"by 名侦探-柯北 "}
+		]
+	}
+}
