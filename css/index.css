@@ -683,3 +683,27 @@ html,body{
 .margin-set{
 	margin-top: 2.5rem;
 }
+.coulms{
+	padding: 0;
+	height: 5.5rem !important;
+}
+.coulms li{
+	height: 5.5rem !important;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	float: right !important;
+}
+.coulms li:nth-child(1){
+	width: 30%;
+}.coulms li>p{
+	height: 100%;
+	font-size: .6rem;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.coulms li:nth-child(2){
+	width: 70%;
+	margin-right: 30%;
+}

@@ -195,8 +195,8 @@ $(function (){
 		}
 		else if(nowPage == 2){
 			if(radioReady){
-					return;
-				}
+				return;
+			}
 			new AJAX(randerRadio,"audoi.json",true);
 		}
 		else{

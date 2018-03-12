@@ -179,7 +179,6 @@ function loadPages(sign,dom){//加载页面
 		let res = data.res;
 		//设置标题
 		$(".secondPage-title").text(res.title);
-		console.log(res.title);
 		
 		let nodes = `
 			<img src="${res.titleimg}" width="100%" class="scdpageimg"/>
